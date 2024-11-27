@@ -1,3 +1,56 @@
+int bolaX;
+int bolaY;
+
+int vX;
+int vY;
+
+int palaX;
+int palaV;
+
+boolean list_bloc[] = new boolean[24]; 
+
+void main() {
+  bolaX = 160;
+  bolaY = 200;
+  
+  vX = 10;
+  vY = 10;
+  
+  palaX = 160;
+  palaV = 5;
+  
+  for (int i = 0; i<24; i = i+1){
+    list_bloc[i] = true;
+  }
+  
+  animate(inicio);
+}
+
+// pantalla de inicio
+void inicio() {
+  background(255,157,0);
+  
+  fill(37,94,94);
+  
+  textSize(30);
+  text("METEORO", 60, 80);
+  
+  fill(31,227,227);
+  
+  textSize(15);
+  text("Pulsa e para continuar", 60, 210);
+  
+  fill(0, 255, 255);
+  
+  
+ if (keyPressed) {
+    if (key == "e") {
+      vX = 10;
+      vY = 10;
+      animate(inicio);
+    }
+  }
+}
 // LAS INSTRUCCIONES ESTÁN ABAJO. SON IMPORTANTES PARA ENTENDER EL JUEGO.
 // AUN ESTANDO JUGANDO SE PUEDEN VER LAS INSTRUCCIONES.
 
