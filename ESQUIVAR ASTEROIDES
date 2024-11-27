@@ -1,0 +1,113 @@
+// LAS INSTRUCCIONES ESTÁN ABAJO. SON IMPORTANTES PARA ENTENDER EL JUEGO.
+// AUN ESTANDO JUGANDO SE PUEDEN VER LAS INSTRUCCIONES.
+
+// INSTRUCTIONS ARE BELOW. THEY ARE IMPORTANT TO UNDERSTAND THE GAME.
+// EVEN WHEN PLAYING YOU CAN SEE THE INSTRUCTIONS.
+
+double Nestrellas = random(20); 
+int Yestrella = 0;
+double Xrandom = random(319);
+int anima= 3;
+int sumanima =3;
+int Vivo = 1;
+int Vida = 300;
+double RestaVida = 0; 
+double tiempoAtaque=30;
+double ataqueY=100;
+double ataqueX=155;
+
+ void estrella() {
+   background(0,0,0);
+strokeWeight(4);
+   RestaVida=0;
+   fill(255,255,255);
+  
+   
+   
+     
+  
+   
+   if(mouseButton==RIGHTBUTTON){
+     RestaVida=-0.02;
+     strokeWeight(8);
+     stroke(random(255),random(255),random(255));
+     line(mouseX,mouseY,mouseX,mouseY-300);
+     stroke(0,0,0);
+     strokeWeight(4);
+   }
+  
+  ellipse(mouseX,mouseY+10,30,20);
+  
+ rect(mouseX - 20,mouseY,40,10);
+  noStroke();
+  ellipse(mouseX,mouseY,10,40);
+  ellipse(mouseX - 20,mouseY + 5,5,20);
+  ellipse(mouseX + 20,mouseY + 5,5,20);
+  stroke(0,255,201);
+  strokeWeight(2);
+  line(mouseX,mouseY + 5,mouseX,mouseY +15);
+   if(Vivo==0);{
+   fill(255,255,255);
+   text("Muerto",150,150);
+ }
+   Vida += RestaVida; 
+   if(Vida<0){
+     fill(255,255,255);
+   text("Victoria",150,150);
+   }
+   tiempoAtaque--;
+   if(tiempoAtaque<0){
+     if(ataqueY>400){
+     tiempoAtaque=30;
+       ataqueY=0;
+       ataqueX+=random(-100,100);
+   }
+     stroke(random(255),random(255),random(255));
+     fill(249,249,249);
+     rect(ataqueX,ataqueY,40,40);
+     stroke(0,0,0);
+  
+   }
+   if(ataqueX+30>mouseX&&ataqueX-20<mouseX && ataqueY+20>mouseY&&ataqueY-20<mouseY){
+     Vivo=0;
+     fill(255,255,255);
+   text("Muerto",150,150);
+   
+   }
+   ataqueY+=1;
+ } 
+
+
+void main() {
+   
+ 
+  loop(estrella);
+   
+  
+  ellipse(50, 50, 50, 50);
+  fill(255,255,255);
+}
+
+
+//BASICAMENTE ESTE JUEGO CONSISTE EN ESQUIVAR LOS METEORITOS QUE SE APROXIMAN A LA NAVE. 
+ //PARA ELLO, LA NAVE SE MUEVE CON EL RATÓN DE IZQUIERDA A DERECHA.
+
+//ACLARACIÓN: LA NAVE ES EL JUGADOR.
+
+println("SP, ES");
+println("BASICAMENTE, ESTE JUEGO CONSISTE EN ESQUIVAR LOS METEORITOS QUE SE APROXIMAN A LA NAVE, PARA ELLO, LA NAVE SE MUEVE CON EL RATÓN DE IZQUIERDA A DERECHA. ACLARACIÓN: LA NAVE ES EL JUGADOR.");
+
+println("LA NAVE DEBE ESTAR EN COSTANTE MOVIMIENTO, NO PUEDE PERMANECER QUIETA EN EL MISMO SITIO.");
+
+println("SEGUNDA ACLARACION: SOLO SE DISPONE DE UNA VIDA DESDE QUE SE INICIA EL JUUEGO HASTA QUE SALE LA PALABRA -MUERTO- EN LA PANTALLA");
+
+println("EL NIVEL TERMINA CUANDO EL METEORITO YA NO SE VE EN LA PANTALLA.");
+
+println("EN, IN");
+println("BASICALLY, THIS GAME CONSIST ON DON´T DEAD DUE TO THE SPACE BALLS THAT STAY NEARLY BY EACH TIME TO THE SPACE PLANE, FOR THAT, THE PLANE HAVE TO BE MOVED TO THE LEFT AND TO THE RIGHT. ACLARATIO: THE SPACE PLANE IS THE PLAYER.");
+
+println("THE SPACE PLANE HAVE TO BE IN CONSTANNT MOVEMENT, IT CAN´T STAY AT THE SAME POINT.");
+  
+println("SECOND ACLARATION: THERE IS ONLY ONE OPPOTUNITY");
+
+println("THE LEVEL ENDS WHEN THE SPACE BALL DESAPEAR FROM THE AND YOU CAN SEE IT.");
